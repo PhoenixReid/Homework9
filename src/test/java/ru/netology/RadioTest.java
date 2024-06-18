@@ -4,6 +4,43 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class RadioTest {
+
+    @Test
+    public void LeastPossibleRadioStation() {
+        Radio station = new Radio();
+        station.setRadioStation(13);
+        int expected = 0;
+        int actual = station.getRadioStation();
+
+    }
+
+    @Test
+    public void MostPossibleRadioStations() {
+        Radio station = new Radio();
+        station.setRadioStation(-3);
+        int expected = 0;
+        int actual = station.getRadioStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void LeastPossibleRadioVolume() {
+        Radio station = new Radio();
+        station.setRadioVolume(130);
+        int expected = 0;
+        int actual = station.getRadioStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void MostPossibleRadioVolumeMax() {
+        Radio station = new Radio();
+        station.setRadioVolume(-1);
+        int expected = 0;
+        int actual = station.getRadioVolume();
+        Assertions.assertEquals(expected, actual);
+    }
+
     @Test
     public void RadioStationNextTest() {
         Radio station = new Radio();
@@ -95,41 +132,7 @@ public class RadioTest {
 
     }
 
-    @Test
-    public void LeastPossibleRadioStation() {
-        Radio station = new Radio();
-        station.setRadioStation(13);
-        int expected = 0;
-        int actual = station.getRadioStation();
 
-    }
-
-    @Test
-    public void MostPossibleRadioStations() {
-        Radio station = new Radio();
-        station.setRadioStation(-3);
-        int expected = 0;
-        int actual = station.getRadioStation();
-        Assertions.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void LeastPossibleRadioVolume() {
-        Radio station = new Radio();
-        station.setRadioVolume(130);
-        int expected = 0;
-        int actual = station.getRadioStation();
-        Assertions.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void MostPossibleRadioVolumeMax() {
-        Radio station = new Radio();
-        station.setRadioVolume(-1);
-        int expected = 0;
-        int actual = station.getRadioVolume();
-        Assertions.assertEquals(expected, actual);
-    }
 
 
 }
