@@ -1,7 +1,22 @@
 package ru.netology;
 
 public class Radio {
+    public int NumbersRadioStations;
+    public int MaxRadioStation = NumbersRadioStations - 1;
 
+    public  Radio(int NumbersRadioStations){
+        this.NumbersRadioStations = NumbersRadioStations;
+         MaxRadioStation = NumbersRadioStations - 1;
+    }
+
+    public Radio(){
+        NumbersRadioStations = 10;
+        MaxRadioStation = NumbersRadioStations - 1;
+    }
+
+    public int getNumbersRadioStations(){
+        return NumbersRadioStations;
+    }
     public int RadioVolume;
 
     public int getRadioVolume() {
@@ -17,6 +32,7 @@ public class Radio {
         }
         RadioVolume = radioVolume;
     }
+    public int MinRadioStation = 0;
 
     public int RadioStation;
 
@@ -25,26 +41,26 @@ public class Radio {
     }
 
     public void setRadioStation(int radioStation) {
-        if (radioStation < 0) {
+        if (radioStation < MinRadioStation) {
             return;
         }
-        if (radioStation > 9) {
+        if (radioStation > MaxRadioStation) {
             return;
         }
         RadioStation = radioStation;
     }
 
     public void RadioStationNext() {
-        if (RadioStation == 9) {
-            RadioStation = 0;
+        if (RadioStation == MaxRadioStation) {
+            RadioStation = MinRadioStation;
         } else {
             RadioStation++;
         }
     }
 
     public void RadioStationPrev() {
-        if (RadioStation == 0) {
-            RadioStation = 9;
+        if (RadioStation == MinRadioStation) {
+            RadioStation = MaxRadioStation;
         } else {
             RadioStation--;
         }
