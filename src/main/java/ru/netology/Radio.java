@@ -1,23 +1,38 @@
 package ru.netology;
 
 public class Radio {
-    public int NumbersRadioStations;
-    public int MaxRadioStation = NumbersRadioStations - 1;
+    private int numbersradiostations;
 
-    public  Radio(int NumbersRadioStations){
-        this.NumbersRadioStations = NumbersRadioStations;
-         MaxRadioStation = NumbersRadioStations - 1;
+    public void setNumbersradiostations(int numbersradiostations) {
+        this.numbersradiostations = numbersradiostations;
     }
 
-    public Radio(){
-        NumbersRadioStations = 10;
-        MaxRadioStation = NumbersRadioStations - 1;
+    public int getNumbersradiostations() {
+        return numbersradiostations;
     }
 
-    public int getNumbersRadioStations(){
-        return NumbersRadioStations;
+    private int maxradiostation = numbersradiostations - 1;
+
+    public int getMaxradiostation() {
+        return maxradiostation;
     }
-    public int RadioVolume;
+
+
+    public Radio(int NumbersRadioStations) {
+        this.numbersradiostations = NumbersRadioStations;
+        maxradiostation = NumbersRadioStations - 1;
+    }
+
+    public Radio() {
+        numbersradiostations = 10;
+        maxradiostation = numbersradiostations - 1;
+    }
+
+    public int getNumbersRadioStations() {
+        return numbersradiostations;
+    }
+
+    private int RadioVolume;
 
     public int getRadioVolume() {
         return RadioVolume;
@@ -32,35 +47,40 @@ public class Radio {
         }
         RadioVolume = radioVolume;
     }
-    public int MinRadioStation = 0;
 
-    public int RadioStation;
+    private int minradiostation = 0;
+
+    public int getminradiostation() {
+        return minradiostation;
+    }
+
+    private int RadioStation;
 
     public int getRadioStation() {
         return RadioStation;
     }
 
     public void setRadioStation(int radioStation) {
-        if (radioStation < MinRadioStation) {
+        if (radioStation < minradiostation) {
             return;
         }
-        if (radioStation > MaxRadioStation) {
+        if (radioStation > maxradiostation) {
             return;
         }
         RadioStation = radioStation;
     }
 
     public void RadioStationNext() {
-        if (RadioStation == MaxRadioStation) {
-            RadioStation = MinRadioStation;
+        if (RadioStation == maxradiostation) {
+            RadioStation = minradiostation;
         } else {
             RadioStation++;
         }
     }
 
     public void RadioStationPrev() {
-        if (RadioStation == MinRadioStation) {
-            RadioStation = MaxRadioStation;
+        if (RadioStation == minradiostation) {
+            RadioStation = maxradiostation;
         } else {
             RadioStation--;
         }
