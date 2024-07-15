@@ -32,10 +32,10 @@ public class Radio {
         return numbersradiostations;
     }
 
-    private int RadioVolume;
+    private int radiovolume;
 
     public int getRadioVolume() {
-        return RadioVolume;
+        return radiovolume;
     }
 
     public void setRadioVolume(int radioVolume) {
@@ -45,7 +45,7 @@ public class Radio {
         if (radioVolume > 100) {
             return;
         }
-        RadioVolume = radioVolume;
+        radiovolume = radioVolume;
     }
 
     private int minradiostation = 0;
@@ -54,10 +54,10 @@ public class Radio {
         return minradiostation;
     }
 
-    private int RadioStation;
+    private int radiostation;
 
     public int getRadioStation() {
-        return RadioStation;
+        return radiostation;
     }
 
     public void setRadioStation(int radioStation) {
@@ -67,34 +67,34 @@ public class Radio {
         if (radioStation > maxradiostation) {
             return;
         }
-        RadioStation = radioStation;
+        radiostation = radioStation;
     }
 
     public void RadioStationNext() {
-        if (RadioStation == maxradiostation) {
-            RadioStation = minradiostation;
+        if (radiostation == maxradiostation) {
+            radiostation = minradiostation;
         } else {
-            RadioStation++;
+            radiostation++;
         }
     }
 
     public void RadioStationPrev() {
-        if (RadioStation == minradiostation) {
-            RadioStation = maxradiostation;
+        if (radiostation == minradiostation) {
+            radiostation = maxradiostation;
         } else {
-            RadioStation--;
+            radiostation--;
         }
     }
 
     public void RadioVolumePlus() {
-        if (RadioVolume < 100) {
-            RadioVolume++;
+        if (radiovolume < 100) {
+            radiovolume++;
         }
     }
 
     public void RadioVolumeMinus() {
-        if (RadioVolume > 0) {
-            RadioVolume--;
+        if (radiovolume > 0) {
+            radiovolume--;
         }
     }
 
